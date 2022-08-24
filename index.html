@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Wordle ES</title>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="dark">
+            <svg class="sun" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+              </svg>
+
+              <svg class="moon ocultar" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+              </svg>
+        </div>
+
+        <div class="texto">
+            <h1>Wordle ES</h1>
+            <p>Adivina la palabra</p>    
+        </div>
+
+        <div class="info">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            </svg>
+        </div>
+    </div>
+    
+    <div class="alertaContainer"></div>
+
+    <div class="container">
+        <div class="previos"></div>
+        <div class="actual"></div>
+        <div class="siguientes"></div>
+        
+        
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+          </div>
+    </div>
+
+    <div class="teclado">
+        <button class="key" value="q">Q</button>
+        <button class="key" value="w">W</button>
+        <button class="key" value="e">E</button>
+        <button class="key" value="r">R</button>
+        <button class="key" value="t">T</button>
+        <button class="key" value="y">Y</button>
+        <button class="key" value="u">U</button>
+        <button class="key" value="i">I</button>
+        <button class="key" value="o">O</button>
+        <button class="key" value="p">P</button>
+        <button class="key" value="a">A</button>
+        <button class="key" value="s">S</button>
+        <button class="key" value="d">D</button>
+        <button class="key" value="f">F</button>
+        <button class="key" value="g">G</button>
+        <button class="key" value="h">H</button>
+        <button class="key" value="j">J</button>
+        <button class="key" value="k">K</button>
+        <button class="key" value="l">L</button>
+        <button class="key" value="ñ">Ñ</button>
+        <button class="key" value="enviar">Enviar</button>
+        <button class="key" value="z">Z</button>
+        <button class="key" value="x">X</button>
+        <button class="key" value="c">C</button>
+        <button class="key" value="v">V</button>
+        <button class="key" value="b">B</button>
+        <button class="key" value="n">N</button>
+        <button class="key" value="m">M</button>
+        <button class="key" value="borrar">Borrar</button>
+    </div>
+    
+    
+    <div class="ayuda ocultarY">
+        <h2>Cómo jugar</h2>
+        <p>Adivina la palabra en 6 intentos</p>
+        <p>Después de cada intento, el color de las cuadrículas cambiará según lo acertada que haya sido tu letra </p>
+        <h3>Ejemplo</h3>
+
+        <div class="previos">
+            <div class="letra green" data-pos="0">a</div>
+            <div class="letra amarillo" data-pos="1">b</div>
+            <div class="letra grey" data-pos="2">r</div>
+            <div class="letra grey" data-pos="3">a</div>
+            <div class="letra green" data-pos="4">z</div>
+            <div class="letra green" data-pos="5">o</div>
+        </div>
+
+        <p class="regla">La(s) letra(s) <span>a, z, o</span> están en la palabra y en la posición correcta </p>
+        <p class="regla">La letra <span>b</span> está en la palabra pero no en la posición correcta </p>
+        <p class="regla">La(s) letra(s) <span>r, a</span> no están en la palabra </p>
+        <button class="boton">Entendido</button>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
