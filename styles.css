@@ -301,6 +301,20 @@ h1{
     padding: 20px;
     font-size: 20px;
 }
+
+
+
+.error-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.error-text{
+    text-align: center;
+}
 /*spinner */
 
 .sk-cube-grid {
