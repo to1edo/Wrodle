@@ -336,7 +336,7 @@ function obtenerPalabra(){
 }
 
 function reasignarPalabra(){
-    const palabraSinFiltro = datos[random(0,5119)].palabra;  
+    const palabraSinFiltro = datos[random(0,5119)];  
             
     palabra = removeAccents(palabraSinFiltro);
     contarRepetidas(palabra);
