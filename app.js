@@ -142,8 +142,14 @@ function detectarTecla(e){
         if(e.target.value === 'enviar'){
 
             let datosSinTilde = datos.map( palabra =>{
-                return removeAccents(palabra.palabra);
+                return removeAccents(palabra);
             });
+
+            if( palabraPrueba.includes('') ){
+
+                mostrarAlerta('Faltan letras', 'error');
+                return;
+            }
 
             if( !datosSinTilde.includes(palabraPrueba.join('')) ){
 
@@ -315,13 +321,15 @@ function resetear(){
 function obtenerPalabra(){
     repetidos.clear();
 
-    fetch('https://api-palabras.herokuapp.com/palabras-caracteres?largo=5') //pronto agregar mas palabras eligiendo dificultad
+    // fetch('https://api-palabras.herokuapp.com/palabras-caracteres?largo=5') //pronto agregar mas palabras eligiendo dificultad
+    fetch('./dictionary.json') //pronto agregar mas palabras eligiendo dificultad
         .then( response => response.json())
         .then( result =>{
             datos = result;
-            const palabraSinFiltro = datos[random(0,5119)].palabra;  
+            const palabraSinFiltro = datos[random(0,5119)];  
             
             palabra = removeAccents(palabraSinFiltro);
+            console.log(palabra)
             contarRepetidas(palabra);
             iniciar();
             spinner.classList.add('ocultar');
