@@ -1,5 +1,6 @@
 const nameCache = 'wordle-v1';
 const files = [
+    '/',
     './index.html',
     './error.html',
     './styles.css',
