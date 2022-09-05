@@ -329,7 +329,6 @@ function obtenerPalabra(){
             const palabraSinFiltro = datos[random(0,5119)];  
             
             palabra = removeAccents(palabraSinFiltro);
-            console.log(palabra)
             contarRepetidas(palabra);
             iniciar();
             spinner.classList.add('ocultar');
