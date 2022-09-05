@@ -1,12 +1,14 @@
 const nameCache = 'wordle-v1';
 const files = [
     '/',
+    'manifest.json',
     './index.html',
     './error.html',
     './styles.css',
     './dictionary.json',
     './app.js',
-    './appSW.js'
+    './appSW.js',
+    'img/icons/144.png'
 ];
 
 
@@ -42,9 +44,9 @@ self.addEventListener('activate',e=>{
 
 self.addEventListener('fetch', e => {
 
-    e.respondWith(
-        caches.match(e.request)//accesar a los archivos en cache
-        .then(cacheResponse => (cacheResponse ? cacheResponse : caches.match('error.html'))) // si no mostrar pagina de error
+    // e.respondWith(
+    //     caches.match(e.request)//accesar a los archivos en cache
+    //     .then(cacheResponse => (cacheResponse ? cacheResponse : caches.match('error.html'))) // si no mostrar pagina de error
 
-    )
+    // )
 })
